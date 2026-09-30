@@ -933,10 +933,10 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR, int nCmdShow) {
     // --------------------------- СФЕРЫ -------------------------------------
     // Первая — та, которой управляет мышь (индекс 0).
     // Остальные анимируются по синусоидам вокруг base-позиций.
-    g_scene.spheres.emplace_back(Vec3(-3.0, 0.0, -16.0), 2.0, ivory);
-    g_scene.spheres.emplace_back(Vec3(-1.0, -1.5, -12.0), 2.0, glass);
-    g_scene.spheres.emplace_back(Vec3(1.5, -0.5, -18.0), 3.0, redRubber);
     g_scene.spheres.emplace_back(Vec3(7.0, 5.0, -18.0), 4.0, mirror);
+    g_scene.spheres.emplace_back(Vec3(-1.0, -1.5, -12.0), 2.0, glass);
+    g_scene.spheres.emplace_back(Vec3(-3.0, 0.0, -16.0), 2.0, ivory);
+    g_scene.spheres.emplace_back(Vec3(1.5, -0.5, -18.0), 3.0, redRubber);
 
     // Три источника разного положения и интенсивности —
     // чтобы тени и блики были "многогранными".
