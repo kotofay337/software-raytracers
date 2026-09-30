@@ -1,4 +1,5 @@
 package org.example.graphics;
+
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -20,7 +21,7 @@ public class TinyRayTracerFX extends Application {
    static final int HEIGHT     = 480;
    static final int SCALE      = 1;
    static final int MAX_DEPTH  = 8;
-   static final double FOV     = Math.PI / 3.0;
+   static final double FOV     = Math.PI / 2.0;
 
    // Глубина, на которой «висит» сфера, управляемая мышью
    static final double MOUSE_SPHERE_Z = -16.0;
@@ -212,10 +213,10 @@ public class TinyRayTracerFX extends Application {
       Material redRubber = new Material(1.0, new double[]{0.9, 0.1, 0.0, 0.0}, new Vec3(0.3, 0.1, 0.1),   10);
       Material mirror    = new Material(1.0, new double[]{0.0,10.0, 0.8, 0.0}, new Vec3(1.0, 1.0, 1.0), 1425);
 
-      spheres.add(new Sphere(new Vec3(-3.0,  0.0, -16), 2, ivory));       // ← индекс 0 — мышью
+      spheres.add(new Sphere(new Vec3( 7.0,  5.0, -18), 4, mirror));      // ← индекс 0 — мышью
+      spheres.add(new Sphere(new Vec3(-3.0,  0.0, -16), 2, ivory));       // ← анимируется
       spheres.add(new Sphere(new Vec3(-1.0, -1.5, -12), 2, glass));       // ← анимируется
       spheres.add(new Sphere(new Vec3( 1.5, -0.5, -18), 3, redRubber));   // ← анимируется
-      spheres.add(new Sphere(new Vec3( 7.0,  5.0, -18), 4, mirror));      // ← анимируется
 
       lights.add(new Light(new Vec3(-20, 20,  20), 1.5));
       lights.add(new Light(new Vec3( 30, 50, -25), 1.8));
