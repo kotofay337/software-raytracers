@@ -17,11 +17,11 @@ import java.util.stream.IntStream;
 
 public class TinyRayTracerFX extends Application {
 
-   static final int WIDTH      = 640;
-   static final int HEIGHT     = 480;
+   static final int WIDTH      = 320;
+   static final int HEIGHT     = 200;
    static final int SCALE      = 1;
-   static final int MAX_DEPTH  = 8;
-   static final double FOV     = Math.PI / 2.0;
+   static final int MAX_DEPTH  = 6;
+   static final double FOV     = Math.PI / 2;
 
    // Глубина, на которой «висит» сфера, управляемая мышью
    static final double MOUSE_SPHERE_Z = -16.0;

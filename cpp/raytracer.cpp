@@ -53,8 +53,8 @@
 // выпускаем за кадр. 480*320 = 153 600 пикселей — компромисс между
 // качеством картинки и скоростью. С учётом рекурсии и теневых лучей
 // реальное число пересечений за кадр в разы больше.
-static constexpr int    WIDTH = 640;
-static constexpr int    HEIGHT = 480;
+static constexpr int    WIDTH = 320;
+static constexpr int    HEIGHT = 200;
 
 // Во сколько раз растягивать буфер при выводе на экран.
 // SCALE = 1 значит 1 пиксель буфера = 1 физический пиксель окна.
@@ -68,7 +68,7 @@ static constexpr int    MAX_DEPTH = 6;
 static constexpr double PI = 3.14159265358979323846;
 
 // Угол обзора по вертикали. PI/2 = 90°.
-static constexpr double FOV = PI / 2.5;
+static constexpr double FOV = PI / 2;
 
 // Глубина, на которой «висит» сфера, управляемая мышью.
 // Ось Z смотрит "в экран" (отрицательное Z = вглубь сцены),
@@ -911,7 +911,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR, int nCmdShow) {
     // с масштабом ≠ 100%. SetProcessDPIAware говорит: "не трогай
     // мои пиксели, я сам". Окно будет ровно 480×320 физических
     // пикселей, картинка — резкой (без интерполяции).
-    SetProcessDPIAware();
+    //SetProcessDPIAware();
 
     // --------------------------- МАТЕРИАЛЫ ---------------------------------
     // (refractiveIndex, albedo[0..3], diffuseColor, specularExponent)
@@ -954,10 +954,10 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR, int nCmdShow) {
     // Куб и пирамида — по обе стороны от сфер, на глубине ~-14,
     // чтобы не пересекаться со сферами. phase/rotSpeed подобраны так,
     // чтобы фигуры двигались вразнобой и вращались с разной скоростью.
-    addAnimatedMesh(makeCube(4.0, gold), Vec3(3.5, 1.5, -14.0),
-        /*phase=*/0.0,  /*rotSpeed=*/ 0.7);
-    addAnimatedMesh(makePyramid(4.0, 5.0, cobalt), Vec3(-5.5, 0.0, -13.5),
-        /*phase=*/1.7,  /*rotSpeed=*/-0.5);
+    //addAnimatedMesh(makeCube(4.0, gold), Vec3(3.5, 1.5, -14.0),
+    //    /*phase=*/0.0,  /*rotSpeed=*/ 0.7);
+    //addAnimatedMesh(makePyramid(4.0, 5.0, cobalt), Vec3(-5.5, 0.0, -13.5),
+    //    /*phase=*/1.7,  /*rotSpeed=*/-0.5);
 
     // --------------------------- ПУЛ ПОТОКОВ -------------------------------
     // hardware_concurrency() = число логических ядер. Для трассировки
